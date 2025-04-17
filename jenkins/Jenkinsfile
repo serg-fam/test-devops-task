@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    docker.build("python-app:${env.BUILD_ID}")
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'docker compose up -d app'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    sleep(10)
+                    def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' http://localhost:5000/health", returnStdout: true).trim()
+                    if (response != "200") {
+                        error "Test failed: status ${response}"
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}

@@ -1,0 +1,18 @@
+groups:
+  - name: app-alerts
+    rules:
+      - alert: HighCPU
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage ({{ $value }}%)"
+
+      - alert: ContainerMemoryUsage
+        expr: container_memory_usage_bytes{container="app"} > 512 * 1024 * 1024 # 512 MB
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Container memory limit exceeded"
