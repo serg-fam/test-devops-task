@@ -10,7 +10,7 @@ Here's how to create a **Project** in Jenkins and configure it to use a `Jenkins
 #### 2. **Configure Source Code Management (SCM)**
    - Under the **Source Code Management** section:
      - Select **Git**.
-     - Add your repository URL (e.g., `https://github.com/your-username/devops-test-task.git`).
+     - Add your repository URL (e.g., `https://github.com/your-username/test-devops-task.git`).
      - Specify the branch (e.g., `main` or `master`).
 
   ---
