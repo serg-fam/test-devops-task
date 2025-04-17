@@ -40,7 +40,7 @@ docker compose up -d
 2. Install recommended plugins
 3. Create **Freestyle Project**:
    - Under **Source Code Management**:  
-     - Select Git: `https://github.com/your-username/devops-test-task.git`
+     - Select Git: `https://github.com/your-username/test-devops-task.git`
    - Under **Build** → **Process Job DSLs**:  
      - Check "Use DSL script from SCM"  
      - Script path: `jenkins/Jenkinsfile`
