@@ -15,10 +15,9 @@ This project deploys a containerized Python application with CI/CD, monitoring (
 
 ### 1. Clone and deploy
 
-git clone https://github.com/your-username/devops-test-task.git
-cd devops-test-task
+git clone https://github.com/your-username/test-devops-task.git
+cd test-devops-task
 docker compose up -d
-```
 
 ### 2. Access services
 | Service        | URL                        | Credentials             |
@@ -35,9 +34,9 @@ docker compose up -d
 
 ### Jenkins CI/CD Pipeline
 1. **Get initial admin password**:
-   ```bash
+   
    docker compose exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-   ```
+
 2. Install recommended plugins
 3. Create **Freestyle Project**:
    - Under **Source Code Management**:  
@@ -125,8 +124,3 @@ This README provides:
 - Architecture overview
 - Troubleshooting guide
 - Ready-to-use commands
-
-To update for your environment:
-1. Replace GitHub URLs
-2. Configure Alertmanager notifications
-3. Adjust alert thresholds in `alerts.yml`
