@@ -5,8 +5,8 @@ This project deploys a containerized Python application with CI/CD, monitoring (
 ---
 
 ## Prerequisites
-- **Docker** (version 20.10+)
-- **Docker Compose** (version 2.0+)
+- **Docker** 
+- **Docker Compose**
 - Available ports: `5000`, `8080`, `3000`, `9090`, `9093`, `9100`, `8081`
 
 ---
